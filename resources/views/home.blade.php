@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Mini Project</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
+=======
+>>>>>>> 878a317daf1316cdac31f2dcf1ad95d835be40df
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -75,6 +78,7 @@
         }
     </style>
 </head>
+<<<<<<< HEAD
 
 <body>
     <div class="navbar">
@@ -109,5 +113,46 @@
             </tbody>
         </table>
     </div>
+=======
+<body>
+
+<div class="navbar">
+    <div>Selamat Datang, <b>{{ Auth::user()->username ?? 'Cahayani' }}</b></div>
+    <div>
+        <a href="{{ route('logout') }}">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>📦 Data Barang</h2>
+    <a href="#" class="add">+ Tambah Barang</a>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nama Barang</th>
+            <th>Jumlah</th>
+            <th>Harga</th>
+            <th>Keterangan</th>
+            <th>Aksi</th>
+        </tr>
+
+        {{-- Contoh Data Dummy --}}
+        <tr>
+            <td>1</td>
+            <td>Buku Tulis</td>
+            <td>50</td>
+            <td>5000</td>
+            <td>Alat tulis sekolah</td>
+            <td>
+                <a href="#" class="edit">Edit</a>
+                <a href="#" class="delete">Hapus</a>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+
+>>>>>>> 878a317daf1316cdac31f2dcf1ad95d835be40df
 </body>
 </html>
