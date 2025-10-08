@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mini Project</title>
-<<<<<<< HEAD
+    <title>Dashboard - edutipaa-app</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
-=======
->>>>>>> 878a317daf1316cdac31f2dcf1ad95d835be40df
     <style>
+
+        
         body {
             font-family: Arial, sans-serif;
             background: #f8f9fa;
@@ -78,81 +77,22 @@
         }
     </style>
 </head>
-<<<<<<< HEAD
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
 <body>
-    <div class="navbar">
-        <h3>📚 Dashboard Buku</h3>
-        <div>
-            <a href="{{ route('home') }}">Home</a>
-            <a href="{{ route('logout') }}">Logout</a>
-        </div>
-    </div>
+    <h2>Halaman Home</h2>
 
-    <div class="container mt-4">
-        <h2 class="text-center mb-4">📘 Daftar Buku</h2>
+    @if(isset($message))
+        <p><strong>Pesan kamu:</strong> {{ $message }}</p>
+    @else
+        <p>Tidak ada pesan dikirim.</p>
+    @endif
 
-        <table class="table table-bordered table-striped">
-            <thead class="table-dark">
-                <tr>
-                    <th>No</th>
-                    <th>Judul Buku</th>
-                    <th>Penulis</th>
-                    <th>Tahun Terbit</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($books as $index => $buku)
-                    <tr>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ $buku['judul'] }}</td>
-                        <td>{{ $buku['penulis'] }}</td>
-                        <td>{{ $buku['tahun'] }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-=======
-<body>
-
-<div class="navbar">
-    <div>Selamat Datang, <b>{{ Auth::user()->username ?? 'Cahayani' }}</b></div>
-    <div>
-        <a href="{{ route('logout') }}">Logout</a>
-    </div>
-</div>
-
-<div class="container">
-    <h2>📦 Data Barang</h2>
-    <a href="#" class="add">+ Tambah Barang</a>
-
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nama Barang</th>
-            <th>Jumlah</th>
-            <th>Harga</th>
-            <th>Keterangan</th>
-            <th>Aksi</th>
-        </tr>
-
-        {{-- Contoh Data Dummy --}}
-        <tr>
-            <td>1</td>
-            <td>Buku Tulis</td>
-            <td>50</td>
-            <td>5000</td>
-            <td>Alat tulis sekolah</td>
-            <td>
-                <a href="#" class="edit">Edit</a>
-                <a href="#" class="delete">Hapus</a>
-                
-            </td>
-        </tr>
-    </table>
-</div>
-
->>>>>>> 878a317daf1316cdac31f2dcf1ad95d835be40df
+    <a href="{{ route('form') }}">Kembali ke Form</a>
 </body>
 </html>
+

@@ -8,14 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $books = [
-            ['judul' => 'Pemrograman Web', 'penulis' => 'Andi Setiawan', 'tahun' => 2021],
-            ['judul' => 'Algoritma dan Struktur Data', 'penulis' => 'Budi Raharjo', 'tahun' => 2019],
-            ['judul' => 'Basis Data', 'penulis' => 'Citra Lestari', 'tahun' => 2020],
-            ['judul' => 'Jaringan Komputer', 'penulis' => 'Dedi Gunawan', 'tahun' => 2022],
-            ['judul' => 'Kecerdasan Buatan', 'penulis' => 'Eka Pratama', 'tahun' => 2023],
-        ];
+        // Kirim data message ke view
+        $message = "Selamat datang di Dashboard Fashion Store 🎉";
 
-        return view('home', compact('books'));
+        // kirim ke view 'home' dengan compact()
+        return view('home', compact('message'));
     }
 }
