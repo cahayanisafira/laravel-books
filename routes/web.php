@@ -4,19 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\BookController; // ✅ PENTING! pastikan controller ini ada
-
-// =============================
-// ROUTE FORM & PESAN
-// =============================
-Route::get('/form', function () {
-    return view('form');
-})->name('form');
-
-Route::post('/submit', function (Request $request) {
-    $message = $request->input('message');
-    return view('home', ['message' => $message]);
-})->name('submit');
+use App\Http\Controllers\BookController;
 
 // =============================
 // AUTHENTICATION (REGISTER & LOGIN)
@@ -47,7 +35,17 @@ Route::get('/', function () {
 // Home Controller
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+// Halaman utama langsung tampil tabel buku
+Route::get('/', [BookController::class, 'index'])->name('books.index');
+
 // =============================
-// BOOKS PAGE
+// ROUTE FORM & PESAN
 // =============================
-Route::get('/books', [BookController::class, 'index'])->name('books.index');
+Route::get('/form', function () {
+    return view('form');
+})->name('form');
+
+Route::post('/submit', function (Request $request) {
+    $message = $request->input('message');
+    return view('home', ['message' => $message]);
+})->name('submit');
